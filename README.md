@@ -1,25 +1,105 @@
 # Hot Dog Factory Concurrency Simulation
 
-This project simulates the operation of a hot dog factory using multithreaded programming in Java. The factory consists of multiple making machines and packing machines working concurrently to produce and pack hot dogs. The simulation demonstrates concepts of process concurrency, synchronization, and mutual exclusion using Java's concurrency primitives.
+## Project Overview
 
-## Assignment Overview
+This is a multi-threaded Java simulation of a hot dog factory production system, designed to demonstrate concurrency, synchronization, and thread management principles. The simulation models the complex interactions between making and packing machines in a controlled manufacturing environment.
 
-The factory has:
-- **Making machines** that make hot dogs.
-- **Packing machines** that pack hot dogs from a shared hot dog pool.
-- A **manager** (main thread) that coordinates the production process, tracks the number of hot dogs, and writes log records.
+## Assignment Details
 
-### Key Features:
-- **Multiple Threads:** Each making machine and packing machine runs on a separate thread.
-- **Circular Queue:** The hot dog pool is modeled as a circular queue with limited slots.
-- **Logging:** The program logs each action performed by the machines, including when hot dogs are made and packed.
+**Course:** CS205 Operating System Concepts with Android
+**Term:** AY2024/25 Term 2
+**Assignment:** Concurrency Simulation
 
-### Requirements:
-- The program is designed to simulate the hot dog production process with parameters:
-  - `N` (number of hot dogs)
-  - `S` (slots in the hot dog pool)
-  - `M` (making machines)
-  - `P` (packing machines)
+### Key Learning Objectives
 
-### Log Format:
-- When a making machine adds a hot dog to the pool:
+- Gain practical experience with multi-threaded programming
+- Understand OS concepts including:
+  - Process concurrency
+  - Synchronization
+  - Mutual exclusion
+
+## System Architecture
+
+### Components
+
+- **Making Machines**: Threads that produce hot dogs
+- **Packing Machines**: Threads that pack hot dogs from a shared pool
+- **Manager (Main Thread)**: Coordinates the entire production process
+
+### Workflow
+
+1. Making machines create hot dogs and place them in a shared pool
+2. Packing machines retrieve and pack hot dogs from the pool
+3. A log file tracks all production activities
+4. Final summary generated after all production is complete
+
+## Usage
+
+### Prerequisites
+
+- Java Development Kit (JDK)
+- Command-line interface
+
+### Running the Simulation
+
+```bash
+java HotDogManager <N> <S> <M> <P>
+
+Where:
+- N: Total number of hot dogs to produce
+- S: Number of slots in the hot dog pool
+- M: Number of making machines
+- P: Number of packing machines
+```
+
+### Example
+
+```bash
+java HotDogManager 10 3 2 2
+```
+
+This will:
+- Produce 10 hot dogs
+- Use a pool with 3 slots
+- Use 2 making machines
+- Use 2 packing machines
+
+## Simulation Constraints
+
+- Making machines take 4 time units to make a hot dog
+- Packing machines take 2 time units to pack a hot dog
+- Maximum of 30 machines per type
+- First-come-first-serve packing order
+
+## Logging
+
+A `log.txt` file is generated, recording:
+- Hot dog production and packing events
+- Machine-specific statistics
+- Final production summary
+
+## Concurrency Primitives
+
+The simulation uses concurrency primitives covered in the course lab sessions.
+
+## Submission Guidelines
+
+- Submit `HotDogManager.java` and `HotDogManager.class`
+- No additional files or subfolders
+- Submit via eLearn before the specified deadline
+
+## Grading Breakdown
+
+- Thread-safe multithreaded programming: 10%
+- Program correctness: 80%
+- Programming style and documentation: 10%
+
+## Important Notes
+
+- This is an individual assignment
+- Collaboration is encouraged, but submitted code must be original
+- No AI-generated code is permitted
+
+## License
+
+This project is part of an academic assignment and is not licensed for external use.
