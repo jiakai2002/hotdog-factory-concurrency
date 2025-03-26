@@ -4,12 +4,6 @@
 
 This is a multi-threaded Java simulation of a hot dog factory production system, designed to demonstrate concurrency, synchronization, and thread management principles. The simulation models the complex interactions between making and packing machines in a controlled manufacturing environment.
 
-## Assignment Details
-
-**Course:** CS205 Operating System Concepts with Android
-**Term:** AY2024/25 Term 2
-**Assignment:** Concurrency Simulation
-
 ### Key Learning Objectives
 
 - Gain practical experience with multi-threaded programming
@@ -77,28 +71,6 @@ A `log.txt` file is generated, recording:
 - Hot dog production and packing events
 - Machine-specific statistics
 - Final production summary
-
-## Concurrency Primitives
-
-The simulation uses concurrency primitives covered in the course lab sessions.
-
-## Submission Guidelines
-
-- Submit `HotDogManager.java` and `HotDogManager.class`
-- No additional files or subfolders
-- Submit via eLearn before the specified deadline
-
-## Grading Breakdown
-
-- Thread-safe multithreaded programming: 10%
-- Program correctness: 80%
-- Programming style and documentation: 10%
-
-## Important Notes
-
-- This is an individual assignment
-- Collaboration is encouraged, but submitted code must be original
-- No AI-generated code is permitted
 
 ## License
 
